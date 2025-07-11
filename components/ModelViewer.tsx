@@ -3,15 +3,17 @@ import { Center, OrbitControls, Environment } from '@react-three/drei'
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
-import { OrbitControls as OrbitControlsImpl } from 'three-stdlib' // 👈 for correct OrbitControls typing
+import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
+
 
 type ModelProps = {
   url: string
   sceneRef: React.MutableRefObject<THREE.Object3D | null>
   onLoaded: () => void
+  rotation?: THREE.Euler
 }
 
-function Model({ url, sceneRef, onLoaded }: ModelProps) {
+function Model({ url, sceneRef, onLoaded, rotation }: ModelProps) {
   const { scene } = useGLTF(url)
 
   useEffect(() => {
@@ -21,10 +23,11 @@ function Model({ url, sceneRef, onLoaded }: ModelProps) {
 
   return (
     <Center>
-      <primitive object={scene} scale={3} />
+      <primitive object={scene} scale={3} rotation={rotation} />
     </Center>
   )
 }
+
 
 type ViewerProps = {
   modelUrl: string
@@ -37,28 +40,39 @@ export default function ModelViewer({ modelUrl, uniqueKey }: ViewerProps) {
   const sceneRef = useRef<THREE.Object3D | null>(null)
   const [ready, setReady] = useState(false)
 
+  // ✅ Reset ready state whenever modelUrl changes
   useEffect(() => {
-    if (!controlsRef.current || !cameraRef.current || !sceneRef.current || !ready) return
+    setReady(false)
+  }, [modelUrl])
 
-    const box = new THREE.Box3().setFromObject(sceneRef.current)
-    const size = box.getSize(new THREE.Vector3())
-    const center = box.getCenter(new THREE.Vector3())
+  // ✅ Camera + controls adjustment after model loads
+  useEffect(() => {
+    if (!controlsRef.current || !cameraRef.current || !sceneRef.current || !ready) return;
 
-    sceneRef.current.position.sub(center)
+    const box = new THREE.Box3().setFromObject(sceneRef.current);
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
 
-    const maxDim = Math.max(size.x, size.y, size.z)
-    let distance = maxDim * 2
+    // Center the model
+    sceneRef.current.position.sub(center);
 
+    // Base camera distance
+    const maxDim = Math.max(size.x, size.y, size.z);
+    let distance = maxDim * 2;
+
+    // ✅ Special closer view for Narmer Palette
     if (uniqueKey === '3') {
-      distance = size.z * 20
-      if (distance < 5) distance = 5
+      const sphere = box.getBoundingSphere(new THREE.Sphere());
+      distance = sphere.radius * 3.5; // 👈 You can tweak this (3 to 4 is a good range)
     }
 
-    cameraRef.current.position.set(0, 0, distance)
-    cameraRef.current.lookAt(0, 0, 0)
-    controlsRef.current.target.set(0, 0, 0)
-    controlsRef.current.update()
-  }, [uniqueKey, ready])
+    // Camera & controls setup
+    cameraRef.current.position.set(0, 0, distance);
+    cameraRef.current.lookAt(0, 0, 0);
+    controlsRef.current.target.set(0, 0, 0);
+    controlsRef.current.update();
+  }, [ready]);
+
 
   return (
     <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[450px]">
@@ -73,8 +87,14 @@ export default function ModelViewer({ modelUrl, uniqueKey }: ViewerProps) {
         <Suspense fallback={null}>
           <Environment preset="warehouse" background={false} />
           <Center>
-            <Model url={modelUrl} sceneRef={sceneRef} onLoaded={() => setReady(true)} />
+            <Model
+              url={modelUrl}
+              sceneRef={sceneRef}
+              onLoaded={() => setReady(true)}
+              rotation={uniqueKey === '3' ? new THREE.Euler(Math.PI / 2, 0, Math.PI / 2 * 2) : uniqueKey === "2" ? new THREE.Euler(0, -(Math.PI / 2), 0) : undefined}
+            />
           </Center>
+
         </Suspense>
         <OrbitControls ref={controlsRef} />
       </Canvas>

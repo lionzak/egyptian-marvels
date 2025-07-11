@@ -19,7 +19,7 @@ export const egyptianSites: Site[] = [
     description:
       "Home of the Great Pyramid and the Sphinx — Giza is where ancient ambition touched the sky and left behind wonders for eternity.",
     image:
-      "/images/giza.webp",
+      "/images/giza.avif",
     category: "Pyramid Complex",
   },
   {
@@ -30,7 +30,7 @@ export const egyptianSites: Site[] = [
     description:
       "Where the ancient world met the sea — Alexandria was once the crown jewel of the Mediterranean, home to the legendary Great Library and the towering Pharos Lighthouse.",
     image:
-      "https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=400&h=300&fit=crop",
+      "/images/alex.webp",
     category: "Historic City",
   },
   {
