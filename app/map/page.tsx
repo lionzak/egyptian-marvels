@@ -20,10 +20,34 @@ export default function EgyptInteractiveMap() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-2 sm:p-4">
-      {/* Back arrow */}
-      <Link href="/" className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50">
-        <ArrowLeft className='text-black hover:text-gray-700 transition-colors duration-200' size={32} />
-      </Link>
+      {/* Arrow + Logos Together */}
+      <div className="absolute top-2 left-2 sm:top-4 sm:left-8 z-50 flex items-center gap-2 sm:gap-6">
+        <Link href="/">
+          <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={32} />
+        </Link>
+        <Image
+          src="/images/egypt.png"
+          alt="egypt"
+          width={80}
+          height={60}
+          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
+        />
+        <Image
+          src="/images/belarus.png"
+          alt="belarus"
+          width={80}
+          height={60}
+          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
+        />
+        <Image
+          src="/images/minstry.png"
+          alt="ministry"
+          width={60}
+          height={60}
+          className="sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
+        />
+      </div>
+
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}

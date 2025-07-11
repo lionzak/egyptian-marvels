@@ -31,6 +31,30 @@ export default function ArtifactsPage() {
           className="sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
         />
       </Link>
+      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 flex gap-2 sm:gap-4">
+        <Image
+          src="/images/egypt.png"
+          alt="egypt"
+          width={80}
+          height={60}
+          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
+        />
+        <Image
+          src="/images/belarus.png"
+          alt="belarus"
+          width={80}
+          height={60}
+          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
+        />
+        <Image
+          src="/images/minstry.png"
+          alt="ministry"
+          width={60}
+          height={60}
+          className="sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
+        />
+      </div>
+
 
       {/* Main Container */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6 py-4 sm:py-6 flex flex-col items-center space-y-3 sm:space-y-4 lg:space-y-6">
