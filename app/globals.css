@@ -69,24 +69,36 @@ body::before {
 /* Custom responsive utilities for model viewer */
 .model-viewer-container {
   width: 100%;
-  height: 16rem; /* 64 * 4px = 256px (h-64) */
+  height: 14rem; /* Smaller on mobile */
+}
+
+@media (min-width: 480px) {
+  .model-viewer-container {
+    height: 16rem;
+  }
 }
 
 @media (min-width: 640px) {
   .model-viewer-container {
-    height: 20rem; /* 80 * 4px = 320px (h-80) */
+    height: 20rem;
   }
 }
 
 @media (min-width: 768px) {
   .model-viewer-container {
-    height: 24rem; /* 96 * 4px = 384px (h-96) */
+    height: 24rem;
   }
 }
 
 @media (min-width: 1024px) {
   .model-viewer-container {
-    height: auto; /* Let it use its natural height on desktop */
+    height: 28rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .model-viewer-container {
+    height: auto;
   }
 }
 
@@ -95,5 +107,109 @@ body::before {
   button {
     min-height: 44px;
     min-width: 44px;
+  }
+}
+
+/* Map container responsive adjustments */
+.map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.2; /* Adjust based on your map image */
+}
+
+@media (min-width: 640px) {
+  .map-container {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .map-container {
+    aspect-ratio: 1.2 / 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .map-container {
+    aspect-ratio: 1.4 / 1;
+  }
+}
+
+/* Map pin responsive scaling */
+.map-pin {
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 480px) {
+  .map-pin {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .map-pin {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Stats grid responsive */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Side panel responsive */
+@media (max-width: 768px) {
+  .side-panel {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    max-height: 70vh;
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+
+/* Responsive text scaling */
+@media (max-width: 480px) {
+  .title-responsive {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  .title-responsive {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .title-responsive {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .title-responsive {
+    font-size: 2.25rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 1025px) {
+  .title-responsive {
+    font-size: 2.5rem;
+    line-height: 1.3;
   }
 }

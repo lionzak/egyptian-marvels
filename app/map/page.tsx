@@ -19,28 +19,27 @@ export default function EgyptInteractiveMap() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-4">
-      {/*back arrow */}
-      <Link href="/">
-        <ArrowLeft className='absolute top-2 left-4 text-black' size={42} />
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-2 sm:p-4">
+      {/* Back arrow */}
+      <Link href="/" className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50">
+        <ArrowLeft className='text-black hover:text-gray-700 transition-colors duration-200' size={32} />
       </Link>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
+        <div className="text-center mb-4 sm:mb-6 lg:mb-8 mt-12 sm:mt-8 lg:mt-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 px-2">
             Explore Ancient Egypt
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">
             Click on the pins to discover Egypt&apos;s most fascinating historical sites,
             from ancient pyramids to magnificent temples along the Nile.
           </p>
-
         </div>
 
         {/* Map Container */}
-        <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="relative w-full h-[600px] md:h-[700px]">
+        <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden mx-2 sm:mx-0">
+          <div className="relative w-full h-96 sm:h-[500px] lg:h-[600px]">
             {/* Egypt Map Background */}
             <img
               src="/images/map.webp"
@@ -65,10 +64,10 @@ export default function EgyptInteractiveMap() {
             ))}
 
             {/* Legend */}
-            <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 rounded-lg p-4 shadow-lg">
-              <h3 className="font-semibold text-gray-800 mb-2">Legend</h3>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
-                <Image src="/images/pin.webp" alt="Pin" width={20} height={20} />
+            <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-white bg-opacity-90 rounded-lg p-3 sm:p-4 shadow-lg max-w-36 sm:max-w-none">
+              <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Legend</h3>
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600">
+                <Image src="/images/pin.webp" alt="Pin" width={16} height={16} className="sm:w-5 sm:h-5" />
                 <span>Historical Sites</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
@@ -79,18 +78,18 @@ export default function EgyptInteractiveMap() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 justify-items-center">
-          <div className="text-center p-4 px-20 bg-white rounded-lg shadow">
-            <div className="text-2xl font-bold text-green-600">5000+</div>
-            <div className="text-sm text-gray-600">Years of History</div>
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6 mt-4 sm:mt-6 lg:mt-8 px-2 sm:px-0">
+          <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-600">5000+</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Years of History</div>
           </div>
-          <div className="text-center p-4 px-20 bg-white rounded-lg shadow">
-            <div className="text-2xl font-bold text-purple-600">7</div>
-            <div className="text-sm text-gray-600">UNESCO Sites</div>
+          <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600">7</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">UNESCO Sites</div>
           </div>
-          <div className="text-center p-4 px-20 bg-white rounded-lg shadow">
-            <div className="text-2xl font-bold text-orange-600">∞</div>
-            <div className="text-sm text-gray-600">Wonders</div>
+          <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600">∞</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Wonders</div>
           </div>
         </div>
       </div>

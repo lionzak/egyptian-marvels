@@ -14,8 +14,8 @@ export const egyptianSites: Site[] = [
   {
     id: "giza",
     name: "Giza",
-    x: "49.27%",
-    y: "19%",
+    x: "49.5%",
+    y: "18%",
     description:
       "Home of the Great Pyramid and the Sphinx — Giza is where ancient ambition touched the sky and left behind wonders for eternity.",
     image:
@@ -25,8 +25,8 @@ export const egyptianSites: Site[] = [
   {
     id: "alexandria",
     name: "Alexandria",
-    x: "42.41%",
-    y: "7%",
+    x: "44.11%",
+    y: "6%",
     description:
       "Where the ancient world met the sea — Alexandria was once the crown jewel of the Mediterranean, home to the legendary Great Library and the towering Pharos Lighthouse.",
     image:
@@ -36,8 +36,8 @@ export const egyptianSites: Site[] = [
   {
     id: "luxor",
     name: "Luxor",
-    x: "58.65%",
-    y: "61%",
+    x: "56.7%",
+    y: "60%",
     description:
       "Known as the world's greatest open-air museum, Luxor contains the ruins of the ancient Egyptian city of Thebes. Home to the Valley of the  , Karnak Temple, and Luxor Temple.",
     image: "/images/luxor.webp",
@@ -47,8 +47,8 @@ export const egyptianSites: Site[] = [
   {
     id: "abu-simbel",
     name: "Abu Simbel",
-    x: "52.5%",
-    y: "92.4%",
+    x: "52%",
+    y: "91.4%",
     description:
       "Guarded by four giant statues of Ramses II, Abu Simbel is a marvel of ancient engineering — and modern rescue — carved into the cliffs of Nubia.",
 
@@ -59,7 +59,7 @@ export const egyptianSites: Site[] = [
     id: "valley of king",
     name: "Valley of the Kings",
     x: "50.75%",
-    y: "61%",
+    y: "60%",
     description:
       "A sacred resting place of pharaohs — from Tutankhamun to Ramses — hidden beneath the desert hills of Luxor’s west bank.",
 
@@ -69,8 +69,8 @@ export const egyptianSites: Site[] = [
   {
     id: "philea",
     name: "Philea",
-    x: "59.55%",
-    y: "84.4%",
+    x: "57.49%",
+    y: "83.5%",
     description:
       "An island of mystery and devotion — Philae Temple rises from the Nile, echoing with tales of the goddess Isis and ancient love.",
 
