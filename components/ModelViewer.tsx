@@ -20,7 +20,9 @@ function Model({
     onLoaded()
   }, [scene])
 
-  return <primitive object={scene} scale={3} />
+  return <Center>
+    <primitive object={scene} scale={3} />
+  </Center>
 }
 
 export default function ModelViewer({
@@ -36,23 +38,38 @@ export default function ModelViewer({
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    if (!controlsRef.current || !cameraRef.current || !sceneRef.current || !ready) return
+    if (!controlsRef.current || !cameraRef.current || !sceneRef.current || !ready) return;
 
-    controlsRef.current.reset()
+    const box = new THREE.Box3().setFromObject(sceneRef.current);
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
 
-    const box = new THREE.Box3().setFromObject(sceneRef.current)
-    const center = new THREE.Vector3()
-    box.getCenter(center)
+    const maxDim = Math.max(size.x, size.y, size.z);
+    let distance = maxDim * 1.8;
 
-    const size = box.getSize(new THREE.Vector3()).length()
-    const distance = size * 1.2
+    if (uniqueKey === '3') {
+      distance = maxDim * 3.2; // Pull the camera farther back for Narmer Palette
+    }
 
-    cameraRef.current.position.set(center.x, center.y, center.z + distance)
-    cameraRef.current.lookAt(center)
+    const cameraPos = new THREE.Vector3(center.x, center.y, center.z + distance);
 
-    controlsRef.current.target.copy(center)
-    controlsRef.current.update()
-  }, [uniqueKey, ready])
+    if (uniqueKey === '3') {
+      cameraPos.set(center.x, center.y + distance * 0.1, center.z + distance * 2); // Pull further and slightly up
+    }
+
+    cameraRef.current.position.copy(cameraPos);
+    cameraRef.current.lookAt(center);
+    controlsRef.current.target.copy(center);
+    controlsRef.current.update();
+
+    // Center the model itself
+    sceneRef.current.position.sub(center);
+  }, [uniqueKey, ready]);
+
+
+
+
+
 
   return (
     <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[450px]">
