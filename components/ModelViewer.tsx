@@ -65,7 +65,7 @@ export default function ModelViewer({
       >
         <ambientLight intensity={0.5} />
         <Suspense fallback={null}>
-          <Environment preset="sunset" background={false} />
+          <Environment preset="warehouse" background={false} />
           <Center>
             <Model
               url={modelUrl}
