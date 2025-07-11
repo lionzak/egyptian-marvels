@@ -22,7 +22,7 @@ export default function EgyptInteractiveMap() {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-4">
       {/*back arrow */}
       <Link href="/">
-        <ArrowLeft className='absolute top-2 left-4 text-black' size={42}/>
+        <ArrowLeft className='absolute top-2 left-4 text-black' size={42} />
       </Link>
 
       <div className="max-w-6xl mx-auto">
@@ -32,9 +32,10 @@ export default function EgyptInteractiveMap() {
             Explore Ancient Egypt
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Click on the pins to discover Egypt's most fascinating historical sites,
+            Click on the pins to discover Egypt&apos;s most fascinating historical sites,
             from ancient pyramids to magnificent temples along the Nile.
           </p>
+
         </div>
 
         {/* Map Container */}
@@ -67,13 +68,13 @@ export default function EgyptInteractiveMap() {
             <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 rounded-lg p-4 shadow-lg">
               <h3 className="font-semibold text-gray-800 mb-2">Legend</h3>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
-                <Image src="/images/pin.webp" alt="Pin" width={20} height={20}/>
+                <Image src="/images/pin.webp" alt="Pin" width={20} height={20} />
                 <span>Historical Sites</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
                 Click pins to explore
               </div>
-            </div>  
+            </div>
           </div>
         </div>
 
