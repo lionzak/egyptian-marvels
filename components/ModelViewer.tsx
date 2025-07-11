@@ -38,37 +38,31 @@ export default function ModelViewer({
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    if (!controlsRef.current || !cameraRef.current || !sceneRef.current || !ready) return;
+  if (!controlsRef.current || !cameraRef.current || !sceneRef.current || !ready) return;
 
-    const box = new THREE.Box3().setFromObject(sceneRef.current);
-    const size = box.getSize(new THREE.Vector3());
-    const center = box.getCenter(new THREE.Vector3());
+  const box = new THREE.Box3().setFromObject(sceneRef.current);
+  const size = box.getSize(new THREE.Vector3());
+  const center = box.getCenter(new THREE.Vector3());
 
-    const maxDim = Math.max(size.x, size.y, size.z);
-    let distance = maxDim * 1.8;
+  // Shift model to origin
+  sceneRef.current.position.sub(center);
 
-    if (uniqueKey === '3') {
-      distance = maxDim * 3.2; // Pull the camera farther back for Narmer Palette
-    }
+  const maxDim = Math.max(size.x, size.y, size.z);
+  let distance = maxDim * 2;
 
-    const cameraPos = new THREE.Vector3(center.x, center.y, center.z + distance);
+  // 👇 Special logic for Narmer Palette (very flat → use z-size)
+  if (uniqueKey === '3') {
+    // Since it's flat, move camera farther away along Z
+    distance = size.z * 20; // exaggerate zoom for flatness
+    if (distance < 5) distance = 5; // minimum fallback
+  }
 
-    if (uniqueKey === '3') {
-      cameraPos.set(center.x, center.y + distance * 0.1, center.z + distance * 2); // Pull further and slightly up
-    }
-
-    cameraRef.current.position.copy(cameraPos);
-    cameraRef.current.lookAt(center);
-    controlsRef.current.target.copy(center);
-    controlsRef.current.update();
-
-    // Center the model itself
-    sceneRef.current.position.sub(center);
-  }, [uniqueKey, ready]);
-
-
-
-
+  // Position camera and controls
+  cameraRef.current.position.set(0, 0, distance);
+  cameraRef.current.lookAt(0, 0, 0);
+  controlsRef.current.target.set(0, 0, 0);
+  controlsRef.current.update();
+}, [uniqueKey, ready]);
 
 
   return (
