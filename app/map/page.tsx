@@ -82,7 +82,7 @@ export default function EgyptInteractiveMap() {
             <div className="text-sm text-gray-600">Years of History</div>
           </div>
           <div className="text-center p-4 px-20 bg-white rounded-lg shadow">
-            <div className="text-2xl font-bold text-purple-600">7 </div>
+            <div className="text-2xl font-bold text-purple-600">7</div>
             <div className="text-sm text-gray-600">UNESCO Sites</div>
           </div>
           <div className="text-center p-4 px-20 bg-white rounded-lg shadow">
