@@ -1,9 +1,11 @@
 'use client'
 import React, { useState } from 'react';
-import { X, MapPin } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { egyptianSites, Site } from '@/data/sites';
 import { Pin } from '@/components/MapPin';
 import { SidePanel } from '@/components/SidePanel';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function EgyptInteractiveMap() {
   const [selectedSite, setSelectedSite] = useState<Site | null>(null);
@@ -18,6 +20,11 @@ export default function EgyptInteractiveMap() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-4">
+      {/*back arrow */}
+      <Link href="/">
+        <ArrowLeft className='absolute top-2 left-4 text-black' size={42}/>
+      </Link>
+
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -60,18 +67,13 @@ export default function EgyptInteractiveMap() {
             <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 rounded-lg p-4 shadow-lg">
               <h3 className="font-semibold text-gray-800 mb-2">Legend</h3>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
-                <MapPin className="w-4 h-4 text-red-600" fill="currentColor" />
+                <Image src="/images/pin.webp" alt="Pin" width={20} height={20}/>
                 <span>Historical Sites</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
                 Click pins to explore
               </div>
-            </div>
-
-            {/* Site Counter */}
-            <div className="absolute top-4 right-4 bg-blue-600 text-white rounded-full px-3 py-1 text-sm font-medium">
-              {egyptianSites.length} Sites
-            </div>
+            </div>  
           </div>
         </div>
 

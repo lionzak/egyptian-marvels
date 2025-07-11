@@ -22,7 +22,7 @@ export default function ArtifactsPage() {
     <div className="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col items-center space-y-4 sm:space-y-6 min-h-screen bg-cover bg-center bg-no-repeat bg-fixed">
       {/*map icon */}
       <Link href="/map">
-        <Image src="/images/treasure-map.webp" alt='map' width={50} height={50} className='absolute top-2 left-3'/>
+        <Image src="/images/treasure-map.webp" alt='map' width={80} height={80} className='absolute top-2 left-3'/>
       </Link>
       {/* Title on top */}
       <h1 className="text-yellow-600 text-2xl sm:text-3xl lg:text-4xl font-bold text-center px-2">
