@@ -20,38 +20,70 @@ export default function EgyptInteractiveMap() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-2 sm:p-4">
-      {/* Arrow + Logos Together */}
-      <div className="absolute top-2 left-2 sm:top-4 sm:left-8 z-50 flex items-center gap-2 sm:gap-6">
-        <Link href="/">
-          <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={32} />
-        </Link>
-        <Image
-          src="/images/egypt.png"
-          alt="egypt"
-          width={80}
-          height={60}
-          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
-        />
-        <Image
-          src="/images/belarus.png"
-          alt="belarus"
-          width={80}
-          height={60}
-          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
-        />
-        <Image
-          src="/images/minstry.png"
-          alt="ministry"
-          width={60}
-          height={60}
-          className="sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
-        />
-      </div>
+      {/* Responsive Navigation Header */}
+      <div className="absolute top-2 left-2 right-2 sm:top-4 sm:left-8 sm:right-auto z-50">
+        {/* Mobile Layout (below sm) */}
+        <div className="flex items-center justify-between sm:hidden">
+          <Link href="/">
+            <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={24} />
+          </Link>
+          <div className="flex items-center gap-1">
+            <Image
+              src="/images/egypt.png"
+              alt="egypt"
+              width={50}
+              height={38}
+              className="hover:scale-110 transition-transform duration-200"
+            />
+            <Image
+              src="/images/belarus.png"
+              alt="belarus"
+              width={50}
+              height={38}
+              className="hover:scale-110 transition-transform duration-200"
+            />
+            <Image
+              src="/images/minstry.png"
+              alt="ministry"
+              width={40}
+              height={40}
+              className="hover:scale-110 transition-transform duration-200"
+            />
+          </div>
+        </div>
 
+        {/* Tablet and Desktop Layout (sm and above) */}
+        <div className="hidden sm:flex items-center gap-3 md:gap-4 lg:gap-6">
+          <Link href="/">
+            <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={28} />
+          </Link>
+          <Image
+            src="/images/egypt.png"
+            alt="egypt"
+            width={60}
+            height={45}
+            className="md:w-20 md:h-15 lg:w-24 lg:h-18 hover:scale-110 transition-transform duration-200"
+          />
+          <Image
+            src="/images/belarus.png"
+            alt="belarus"
+            width={60}
+            height={45}
+            className="md:w-20 md:h-15 lg:w-24 lg:h-18 hover:scale-110 transition-transform duration-200"
+          />
+          <Image
+            src="/images/minstry.png"
+            alt="ministry"
+            width={50}
+            height={50}
+            className="md:w-16 md:h-16 lg:w-20 lg:h-20 hover:scale-110 transition-transform duration-200"
+          />
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-4 sm:mb-6 lg:mb-8 mt-12 sm:mt-8 lg:mt-4">
+        <div className="text-center mb-4 sm:mb-6 lg:mb-8 mt-16 sm:mt-12 lg:mt-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 px-2">
             Explore Ancient Egypt
           </h1>

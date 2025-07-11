@@ -31,30 +31,59 @@ export default function ArtifactsPage() {
           className="sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
         />
       </Link>
-      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 flex gap-2 sm:gap-4">
-        <Image
-          src="/images/egypt.png"
-          alt="egypt"
-          width={80}
-          height={60}
-          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
-        />
-        <Image
-          src="/images/belarus.png"
-          alt="belarus"
-          width={80}
-          height={60}
-          className="sm:w-30 sm:h-20 hover:scale-110 transition-transform duration-200"
-        />
-        <Image
-          src="/images/minstry.png"
-          alt="ministry"
-          width={60}
-          height={60}
-          className="sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
-        />
-      </div>
 
+      {/* Responsive Logo Navigation */}
+      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50">
+        {/* Mobile Layout (below sm) */}
+        <div className="flex gap-1 sm:hidden">
+          <Image
+            src="/images/egypt.png"
+            alt="egypt"
+            width={50}
+            height={38}
+            className="hover:scale-110 transition-transform duration-200"
+          />
+          <Image
+            src="/images/belarus.png"
+            alt="belarus"
+            width={50}
+            height={38}
+            className="hover:scale-110 transition-transform duration-200"
+          />
+          <Image
+            src="/images/minstry.png"
+            alt="ministry"
+            width={40}
+            height={40}
+            className="hover:scale-110 transition-transform duration-200"
+          />
+        </div>
+
+        {/* Tablet and Desktop Layout (sm and above) */}
+        <div className="hidden sm:flex gap-2 md:gap-3 lg:gap-4">
+          <Image
+            src="/images/egypt.png"
+            alt="egypt"
+            width={60}
+            height={45}
+            className="md:w-20 md:h-15 lg:w-24 lg:h-18 hover:scale-110 transition-transform duration-200"
+          />
+          <Image
+            src="/images/belarus.png"
+            alt="belarus"
+            width={60}
+            height={45}
+            className="md:w-20 md:h-15 lg:w-24 lg:h-18 hover:scale-110 transition-transform duration-200"
+          />
+          <Image
+            src="/images/minstry.png"
+            alt="ministry"
+            width={50}
+            height={50}
+            className="md:w-16 md:h-16 lg:w-20 lg:h-20 hover:scale-110 transition-transform duration-200"
+          />
+        </div>
+      </div>
 
       {/* Main Container */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6 py-4 sm:py-6 flex flex-col items-center space-y-3 sm:space-y-4 lg:space-y-6">
