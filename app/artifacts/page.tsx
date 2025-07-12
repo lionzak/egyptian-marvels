@@ -17,7 +17,7 @@ export default function ArtifactsPage() {
   }
 
   return (
-    <div className="relative h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed">
+    <div className="relative min-h-screen bg-cover bg-center bg-no-repeat bg-fixed">
       {/* Map Icon */}
       <Link href="/map" className="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6 z-50">
         <Image
@@ -122,7 +122,7 @@ export default function ArtifactsPage() {
           </motion.div>
         </div>
         {/* Navigation */}
-        <div className="flex gap-3 md:gap-4 mt-4 md:mt-6 w-full max-w-xs sm:max-w-sm md:max-w-md -translate-y-10">
+        <div className="flex gap-3 md:gap-4 mt-4 md:mt-6 w-full max-w-xs sm:max-w-sm md:max-w-md ">
           <button
             onClick={goPrevious}
             disabled={index === 0}
