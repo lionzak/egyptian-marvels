@@ -8,7 +8,7 @@
     const handlePlay = () => {
         const audio = audioRef.current
         if (audio) {
-            audio.volume = 0.1
+            audio.volume = 0.3
         audio
             .play()
             .then(() => {
