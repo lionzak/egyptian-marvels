@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { egyptianSites, Site } from '@/data/sites';
 import { Pin } from '@/components/MapPin';
@@ -9,6 +9,66 @@ import Image from 'next/image';
 
 export default function EgyptInteractiveMap() {
   const [selectedSite, setSelectedSite] = useState<Site | null>(null);
+  const [mapDimensions, setMapDimensions] = useState<{
+    width: number;
+    height: number;
+    offsetX: number;
+    offsetY: number;
+  }>({ width: 0, height: 0, offsetX: 0, offsetY: 0 });
+  const mapRef = useRef<HTMLImageElement>(null);
+
+  // Calculate map image dimensions and offsets
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (mapRef.current) {
+        const img = mapRef.current;
+        const rect = img.getBoundingClientRect();
+        const { naturalWidth, naturalHeight } = img;
+
+        // Calculate scaled dimensions and offsets for object-contain
+        const containerAspect = rect.width / rect.height;
+        const imageAspect = naturalWidth / naturalHeight;
+        let scaledWidth = rect.width;
+        let scaledHeight = rect.height;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        if (containerAspect > imageAspect) {
+          // Container is wider, image is scaled by height
+          scaledWidth = rect.height * imageAspect;
+          offsetX = (rect.width - scaledWidth) / 2;
+        } else {
+          // Container is taller, image is scaled by width
+          scaledHeight = rect.width / imageAspect;
+          offsetY = (rect.height - scaledHeight) / 2;
+        }
+
+        // Add slight adjustment for mobile to correct leftward shift
+        const isMobile = window.innerWidth < 640; // Tailwind's 'sm' breakpoint
+        if (isMobile) {
+          offsetX += 5; // Adjust offsetX by 5px to compensate for left shift
+        }
+
+        setMapDimensions({ width: scaledWidth, height: scaledHeight, offsetX, offsetY });
+      }
+    };
+
+    // Check if image is loaded
+    if (mapRef.current?.complete) {
+      updateDimensions();
+    } else {
+      mapRef.current?.addEventListener('load', updateDimensions);
+    }
+
+    // Update on resize
+    window.addEventListener('resize', updateDimensions);
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+      if (mapRef.current) {
+        mapRef.current.removeEventListener('load', updateDimensions);
+      }
+    };
+  }, []);
 
   const handlePinClick = (site: Site) => {
     setSelectedSite(site);
@@ -88,18 +148,19 @@ export default function EgyptInteractiveMap() {
             Explore Ancient Egypt
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">
-            Click on the pins to discover Egypt&apos;s most fascinating historical sites,
+            Click on the pins to discover Egypt's most fascinating historical sites,
             from ancient pyramids to magnificent temples along the Nile.
           </p>
         </div>
 
         {/* Map Container */}
-        <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden mx-2 sm:mx-0">
+        <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-xl mx-2 sm:mx-0">
           <div className="relative w-full h-96 sm:h-[500px] lg:h-[600px]">
             {/* Egypt Map Background */}
             <img
               src="/images/map.webp"
               alt="Egypt Map"
+              ref={mapRef}
               className="absolute inset-0 w-full h-full object-contain"
               onClick={(e) => {
                 const container = e.currentTarget;
@@ -116,6 +177,7 @@ export default function EgyptInteractiveMap() {
                 key={site.id}
                 site={site}
                 onClick={() => handlePinClick(site)}
+                mapDimensions={mapDimensions}
               />
             ))}
 
