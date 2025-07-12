@@ -17,7 +17,7 @@ export default function ArtifactsPage() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed">
+    <div className="relative h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed">
       {/* Map Icon */}
       <Link href="/map" className="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6 z-50">
         <Image
@@ -135,6 +135,10 @@ export default function ArtifactsPage() {
             Next ▶
           </button>
         </div>
+        <div className="fixed bottom-2 left-2 sm:bottom-4 sm:left-4 text-white text-xs sm:text-sm md:text-base z-40 pointer-events-none">
+          разработанный Марком Альбером
+        </div>
+
       </div>
     </div>
   )

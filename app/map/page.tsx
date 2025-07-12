@@ -82,6 +82,12 @@ export default function EgyptInteractiveMap() {
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 p-2 sm:p-4">
       {/* Responsive Navigation Header */}
       <div className="absolute top-2 left-2 right-2 sm:top-4 sm:left-8 sm:right-auto z-50">
+
+        {/*design by */}
+        <div className="fixed top-2 right-2 sm:bottom-4 sm:right-4 text-black text-xs sm:text-sm md:text-base z-40 pointer-events-none">
+          разработанный Марком Альбером
+        </div>
+
         {/* Mobile Layout (below sm) */}
         <div className="flex items-center justify-between sm:hidden">
           <Link href="/">
