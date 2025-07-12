@@ -1,148 +1,126 @@
 'use client'
-import { useState } from 'react'
-import artifacts from '@/data/artifacts.json'
-import ModelViewer from '@/components/ModelViewer'
-import Image from 'next/image'
+
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 
-export default function ArtifactsPage() {
-  const [index, setIndex] = useState(0)
-  const artifact = artifacts[index]
-  const goNext = () => {
-    if (index < artifacts.length - 1) setIndex(index + 1)
-  }
-  const goPrevious = () => {
-    if (index > 0) setIndex(index - 1)
-  }
+export default function LandingPage() {
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 text-gray-800 overflow-x-hidden">
+            {/* Hero */}
+            <section className="relative text-center px-4 pt-20 pb-12 sm:pt-28 sm:pb-16">
+                <div className="max-w-4xl mx-auto">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-yellow-800 leading-tight">
+                        Egyptian Marvels
+                    </h1>
+                    <p className="mt-4 text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto">
+                        Step into ancient Egypt and explore breathtaking 3D artifacts and historical treasures — all in your browser.
+                    </p>
+                    <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                        <Link
+                            href="/map"
+                            className="bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-800 transition-colors"
+                        >
+                            Explore Map
+                        </Link>
+                        <Link
+                            href="/artifacts"
+                            className="flex justify-center items-center gap-2 px-6 py-3 border border-yellow-700 text-yellow-700 rounded-lg font-semibold hover:bg-yellow-100 transition-colors"
+                        >
+                            View Artifacts
+                            <ArrowRight size={18} />
+                        </Link>
+                    </div>
+                </div>
+                {/* Hero Image */}
+                <Image
+                    src="/images/view.jpg"
+                    alt="Pharaoh"
+                    width={600}
+                    height={400}
+                    className="mx-auto mt-10 rounded-xl shadow-xl"
+                />
+            </section>
 
-  return (
-    <div className="relative h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed">
-      {/* Map Icon */}
-      <Link href="/map" className="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6 z-50">
-        <Image
-          src="/images/treasure-map.webp"
-          alt="map"
-          width={48}
-          height={48}
-          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 hover:scale-105 transition-transform duration-200"
-        />
-      </Link>
-      {/* Responsive Logo Navigation */}
-      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50">
-        {/* Mobile Layout (below md) */}
-        <div className="flex gap-2 md:hidden">
-          <Image
-            src="/images/egypt.png"
-            alt="egypt"
-            width={40}
-            height={30}
-            className="hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/belarus.png"
-            alt="belarus"
-            width={40}
-            height={30}
-            className="hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/minstry.png"
-            alt="ministry"
-            width={32}
-            height={32}
-            className="hover:scale-105 transition-transform duration-200"
-          />
-        </div>
-        {/* Tablet and Desktop Layout (md and above) */}
-        <div className="hidden md:flex gap-3 lg:gap-4">
-          <Image
-            src="/images/egypt.png"
-            alt="egypt"
-            width={56}
-            height={42}
-            className="lg:w-20 lg:h-15 hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/belarus.png"
-            alt="belarus"
-            width={56}
-            height={42}
-            className="lg:w-20 lg:h-15 hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/minstry.png"
-            alt="ministry"
-            width={48}
-            height={48}
-            className="lg:w-16 lg:h-16 hover:scale-105 transition-transform duration-200"
-          />
-        </div>
-      </div>
-      {/* Main Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 flex flex-col items-center space-y-6 md:space-y-8">
-        {/* Title */}
-        <h1 className="text-black font-bold text-center px-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          Egyptian Marvels
-        </h1>
-        <h1 className="text-yellow-600 font-bold text-center px-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          {artifact.name}
-        </h1>
-        {/* Model + Description */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 w-full items-center md:items-start">
-          {/* 3D Model */}
-          <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col items-center md:items-end space-y-2">
-            <div className="flex justify-center md:justify-end w-full">
-              <Image
-                src="/images/orbitcontrols.png"
-                alt="movement icon"
-                width={20}
-                height={20}
-                className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 translate-y-4 md:translate-y-6"
-              />
-            </div>
-            <div className="w-full">
-              <ModelViewer modelUrl={artifact.model} uniqueKey={artifact.id} />
-            </div>
-          </div>
-          {/* Description */}
-          <motion.div
-            key={artifact.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="w-full md:w-1/2 lg:w-2/5 backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-4 sm:p-6 md:p-8 text-center md:text-left space-y-3 shadow-lg"
-          >
-            <p className="text-xs sm:text-sm md:text-base text-lime-200 tracking-wide">
-              📜 {artifact.period} • 📍 {artifact.location}
-            </p>
-            <p className="text-orange-100 leading-relaxed font-semibold text-sm sm:text-base md:text-lg">
-              {artifact.description}
-            </p>
-          </motion.div>
-        </div>
-        {/* Navigation */}
-        <div className="flex gap-3 md:gap-4 mt-4 md:mt-6 w-full max-w-xs sm:max-w-sm md:max-w-md -translate-y-10">
-          <button
-            onClick={goPrevious}
-            disabled={index === 0}
-            className="flex-1 px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-gray-800 text-white rounded-lg disabled:opacity-50 hover:bg-gray-700 transition-colors duration-200 disabled:cursor-not-allowed text-xs sm:text-sm md:text-base font-medium"
-          >
-            ◀ Previous
-          </button>
-          <button
-            onClick={goNext}
-            disabled={index === artifacts.length - 1}
-            className="flex-1 px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-gray-800 text-white rounded-lg disabled:opacity-50 hover:bg-gray-700 transition-colors duration-200 disabled:cursor-not-allowed text-xs sm:text-sm md:text-base font-medium"
-          >
-            Next ▶
-          </button>
-        </div>
-        <div className="fixed bottom-2 left-2 sm:bottom-4 sm:left-4 text-white text-xs sm:text-sm md:text-base z-40 pointer-events-none">
-          разработанный Марком Альбером
-        </div>
+            {/* Features */}
+            <section className="px-6 py-12 bg-white">
+                <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    {[
+                        {
+                            title: 'Realistic 3D Models',
+                            desc: 'Inspect ancient artifacts in full 3D — rotate, zoom, and explore every detail.',
+                            icon: '/images/3d.png',
+                        },
+                        {
+                            title: 'Interactive Map',
+                            desc: 'Click on locations across Egypt to reveal famous temples, pyramids, and ruins.',
+                            icon: '/images/map-view.png',
+                        },
+                        {
+                            title: 'Learn with Legends',
+                            desc: 'Discover fascinating stories and cultural facts behind each artifact from Ancient Egypt.',
+                            icon: '/images/temple.webp',
+                        },
+                    ].map((item) => (
+                        <div key={item.title} className="bg-yellow-50 rounded-xl shadow p-6">
+                            {item.title === "Learn with Legends" ? <Image src={item.icon} alt={item.title} width={400} height={200} className="mx-auto mb-4" /> : <Image src={item.icon} alt={item.title} width={200} height={200} className="mx-auto mb-4" />
+                            }
+                            <h3 className="text-xl font-bold text-yellow-800">{item.title}</h3>
+                            <p className="text-gray-600 mt-2">{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
-      </div>
-    </div>
-  )
+            {/* Preview section */}
+            <section className="py-14 px-4 bg-yellow-100 text-center">
+                <h2 className="text-3xl sm:text-4xl font-bold text-yellow-900">Experience the Ancient World</h2>
+                <p className="text-gray-700 max-w-2xl mx-auto mt-4">
+                    Our collection features real archaeological data, immersive visuals, and smooth 3D performance to take you back in time.
+                </p>
+                <div className="mt-10 flex flex-wrap justify-center gap-4">
+                    <Image
+                        src="/images/giza.avif"
+                        alt="Giza Preview"
+                        width={300}
+                        height={200}
+                        className="rounded-lg shadow-md hover:scale-105 transition-transform"
+                    />
+                    <Image
+                        src="/images/luxor.webp"
+                        alt="Luxor Preview"
+                        width={300}
+                        height={200}
+                        className="rounded-lg shadow-md hover:scale-105 transition-transform"
+                    />
+                    <Image
+                        src="/images/kings.avif"
+                        alt="Valley of Kings"
+                        width={300}
+                        height={200}
+                        className="rounded-lg shadow-md hover:scale-105 transition-transform"
+                    />
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="py-16 px-6 bg-yellow-700 text-white text-center">
+                <h2 className="text-3xl sm:text-4xl font-bold">Start Your Journey Today</h2>
+                <p className="mt-3 text-lg max-w-xl mx-auto">
+                    Travel through 5000 years of history. Dive into Egypt’s wonders from the comfort of your screen.
+                </p>
+                <Link
+                    href="/artifacts"
+                    className="mt-6 inline-block bg-white text-yellow-800 font-bold py-3 px-6 rounded-lg hover:bg-yellow-100 transition"
+                >
+                    Browse Artifacts
+                </Link>
+            </section>
+
+            {/* Footer */}
+            <footer className="text-center text-sm py-6 text-gray-600 bg-white">
+                &copy; {new Date().getFullYear()} Egyptian Marvels. Created By Mark Alber for history lovers.
+            </footer>
+        </div>
+    )
 }

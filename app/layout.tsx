@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css'; // Make sure this line exists and is correct
+import GlobalAudioPlayer from '@/components/GlobalAudioPlayer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +22,8 @@ export default function RootLayout({
       <body className={`${inter.className} relative`}>
         {/* If you use the overlay, add this div */}
         {/* <div className="background-overlay absolute inset-0 -z-10"></div> */}
+        <GlobalAudioPlayer />
+
 
         {children}
       </body>
