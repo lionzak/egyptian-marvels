@@ -7,6 +7,10 @@ import { ArrowRight } from 'lucide-react'
 export default function LandingPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 text-gray-800 overflow-x-hidden">
+            {/*design by */}
+            <div className="fixed top-2 left-2 sm:bottom-4 sm:left-4 text-black text-xs sm:text-sm md:text-base z-40 pointer-events-none">
+                разработанный Марком Альбером
+            </div>
             {/* Hero */}
             <section className="relative text-center px-4 pt-20 pb-12 sm:pt-28 sm:pb-16">
                 <div className="max-w-4xl mx-auto">
