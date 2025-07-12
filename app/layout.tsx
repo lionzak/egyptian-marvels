@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css'; // Make sure this line exists and is correct
+import './globals.css';
 import GlobalAudioPlayer from '@/components/GlobalAudioPlayer';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,13 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Apply the font class and potentially a class for overlay if you use it */}
       <body className={`${inter.className} relative`}>
-        {/* If you use the overlay, add this div */}
-        {/* <div className="background-overlay absolute inset-0 -z-10"></div> */}
+        {/* Global Audio Player - will persist across all routes */}
         <GlobalAudioPlayer />
-
-
+        
+        {/* Main content */}
         {children}
       </body>
     </html>
