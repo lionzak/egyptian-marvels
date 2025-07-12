@@ -121,7 +121,7 @@ export default function ModelViewer({ modelUrl, uniqueKey }: ViewerProps) {
               />
             </Center>
           </Suspense>
-          <OrbitControls ref={controlsRef} enablePan={false} enableZoom={!isMobile} />
+          <OrbitControls ref={controlsRef} enablePan={false}  />
         </Canvas>
       ) : (
         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
