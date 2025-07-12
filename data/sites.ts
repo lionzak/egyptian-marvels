@@ -18,8 +18,7 @@ export const egyptianSites: Site[] = [
     y: "18%",
     description:
       "Home of the Great Pyramid and the Sphinx — Giza is where ancient ambition touched the sky and left behind wonders for eternity.",
-    image:
-      "/images/giza.avif",
+    image: "/images/giza.avif",
     category: "Pyramid Complex",
   },
   {
@@ -29,8 +28,7 @@ export const egyptianSites: Site[] = [
     y: "6%",
     description:
       "Where the ancient world met the sea — Alexandria was once the crown jewel of the Mediterranean, home to the legendary Great Library and the towering Pharos Lighthouse.",
-    image:
-      "/images/alex.webp",
+    image: "/images/alex.webp",
     category: "Historic City",
   },
   {
@@ -76,5 +74,16 @@ export const egyptianSites: Site[] = [
 
     image: "/images/philea.webp",
     category: "Island Temple",
+  },
+  {
+    id: "moses-mount",
+    name: "Mount Sinai",
+    x: "72%",
+    y: "32%",
+    description:
+      "Also known as Moses' Mount, this is the place where, according to tradition, Moses received the Ten Commandments. It is a sacred mountain for Heavenly religions, and a destination for pilgrims and travelers seeking reflection and peace.",
+
+    image: "/images/moses.webp",
+    category: "Sacred Mountain",
   },
 ];
