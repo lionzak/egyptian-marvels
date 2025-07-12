@@ -1,5 +1,5 @@
 'use client'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { Center, OrbitControls, Environment } from '@react-three/drei'
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
@@ -115,8 +115,8 @@ export default function ModelViewer({ modelUrl, uniqueKey }: ViewerProps) {
                   uniqueKey === '3'
                     ? new THREE.Euler(Math.PI / 2, 0, (Math.PI / 2) * 2)
                     : uniqueKey === '2'
-                    ? new THREE.Euler(0, -(Math.PI / 2), 0)
-                    : undefined
+                      ? new THREE.Euler(0, -(Math.PI / 2), 0)
+                      : undefined
                 }
               />
             </Center>
@@ -133,10 +133,28 @@ export default function ModelViewer({ modelUrl, uniqueKey }: ViewerProps) {
 }
 
 function FallbackBox() {
+  const ref = useRef<THREE.Mesh>(null!)
+
+  // Rotate the box gently
+  useFrame(() => {
+    if (ref.current) {
+      ref.current.rotation.y += 0.01
+      ref.current.rotation.x += 0.005
+    }
+  })
+
   return (
-    <mesh>
+    <mesh ref={ref}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="gray" />
+      <meshStandardMaterial
+        color="#cccccc"
+        metalness={0.5}
+        roughness={0.2}
+        transparent={true}
+        opacity={0.7}
+        emissive="#222222"
+        emissiveIntensity={0.2}
+      />
     </mesh>
   )
 }
