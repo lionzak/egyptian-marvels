@@ -13,77 +13,73 @@ export interface Site {
 export const egyptianSites: Site[] = [
   {
     id: "giza",
-    name: "Giza",
+    name: "Гиза",
     x: "49%",
     y: "18%",
     description:
-      "Home of the Great Pyramid and the Sphinx — Giza is where ancient ambition touched the sky and left behind wonders for eternity.",
+      "Дом Великой пирамиды и Сфинкса — Гиза — это место, где древние амбиции коснулись неба и оставили после себя чудеса на вечность.",
     image: "/images/giza.avif",
-    category: "Pyramid Complex",
+    category: "Пирамидный комплекс",
   },
   {
     id: "alexandria",
-    name: "Alexandria",
+    name: "Александрия",
     x: "38.8%",
     y: "6%",
     description:
-      "Where the ancient world met the sea — Alexandria was once the crown jewel of the Mediterranean, home to the legendary Great Library and the towering Pharos Lighthouse.",
+      "Там, где древний мир встретился с морем — Александрия когда-то была жемчужиной Средиземноморья, домом для легендарной Великой библиотеки и возвышающегося Фаросского маяка.",
     image: "/images/alex.webp",
-    category: "Historic City",
+    category: "Исторический город",
   },
   {
     id: "luxor",
-    name: "Luxor",
+    name: "Луксор",
     x: "62.9%",
     y: "60%",
     description:
-      "Known as the world's greatest open-air museum, Luxor contains the ruins of the ancient Egyptian city of Thebes. Home to the Valley of the  , Karnak Temple, and Luxor Temple.",
+      "Известный как величайший в мире музей под открытым небом, Луксор содержит руины древнеегипетского города Фивы. Здесь находятся Долина Царей, Карнакский храм и Луксорский храм.",
     image: "/images/luxor.webp",
-    category: "Archaeological Site",
+    category: "Археологический объект",
   },
 
   {
     id: "abu-simbel",
-    name: "Abu Simbel",
+    name: "Абу-Симбел",
     x: "53.7%",
     y: "91.4%",
     description:
-      "Guarded by four giant statues of Ramses II, Abu Simbel is a marvel of ancient engineering — and modern rescue — carved into the cliffs of Nubia.",
-
+      "Охраняемый четырьмя гигантскими статуями Рамсеса II, Абу-Симбел — это чудо древнего инженерного искусства и современного спасения, высеченное в скалах Нубии.",
     image: "/images/abu-simble.webp",
-    category: "Rock-Cut Temple",
+    category: "Скальный храм",
   },
   {
     id: "valley of king",
-    name: "Valley of the Kings",
+    name: "Долина Царей",
     x: "50.75%",
     y: "60%",
     description:
-      "A sacred resting place of pharaohs — from Tutankhamun to Ramses — hidden beneath the desert hills of Luxor’s west bank.",
-
+      "Священное место упокоения фараонов — от Тутанхамона до Рамсеса — скрытое под пустынными холмами западного берега Луксора.",
     image: "/images/kings.avif",
-    category: "Royal Necropolis",
+    category: "Королевский некрополь",
   },
   {
     id: "philea",
-    name: "Philea",
+    name: "Филе",
     x: "64%",
     y: "83.5%",
     description:
-      "An island of mystery and devotion — Philae Temple rises from the Nile, echoing with tales of the goddess Isis and ancient love.",
-
+      "Остров тайны и преданности — Храм Филе возвышается над Нилом, вторя рассказам о богине Исиде и древней любви.",
     image: "/images/philea.webp",
-    category: "Island Temple",
+    category: "Островной храм",
   },
   {
     id: "moses-mount",
-    name: "Mount Sinai",
+    name: "Гора Синай",
     x: "72%",
     y: "32%",
     description:
-      "Also known as Moses' Mount, this is the place where, according to tradition, Moses received the Ten Commandments. It is a sacred mountain for Heavenly religions, and a destination for pilgrims and travelers seeking reflection and peace.",
-
+      "Также известная как Гора Моисея, это место, где, согласно преданию, Моисей получил Десять Заповедей. Это священная гора для Небесных религий и место назначения для паломников и путешественников, ищущих размышлений и покоя.",
     image: "/images/moses.webp",
-    category: "Sacred Mountain",
+    category: "Священная гора",
   },
 ];

@@ -145,11 +145,10 @@ export default function EgyptInteractiveMap() {
         {/* Header */}
         <div className="text-center mb-4 sm:mb-6 lg:mb-8 mt-16 sm:mt-12 lg:mt-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 px-2">
-            Explore Ancient Egypt
+            Исследуйте Древний Египет
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">
-            Click on the pins to discover Egypt&apos;s most fascinating historical sites,
-            from ancient pyramids to magnificent temples along the Nile.
+            Нажмите на значки, чтобы открыть для себя самые захватывающие исторические места Египта: от древних пирамид до величественных храмов вдоль Нила.
           </p>
         </div>
 
@@ -186,10 +185,10 @@ export default function EgyptInteractiveMap() {
               <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Legend</h3>
               <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600">
                 <Image src="/images/pin.webp" alt="Pin" width={16} height={16} className="sm:w-5 sm:h-5" />
-                <span>Historical Sites</span>
+                <span>Исторические места</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
-                Click pins to explore
+                Нажмите на значки, чтобы изучить
               </div>
             </div>
           </div>
@@ -199,15 +198,15 @@ export default function EgyptInteractiveMap() {
         <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6 mt-4 sm:mt-6 lg:mt-8 px-2 sm:px-0">
           <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-600">5000+</div>
-            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Years of History</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Годы истории</div>
           </div>
           <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600">7</div>
-            <div className="text-xs sm:text-sm lg:text-base text-gray-600">UNESCO Sites</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Объекты ЮНЕСКО</div>
           </div>
           <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600">∞</div>
-            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Wonders</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Чудеса</div>
           </div>
         </div>
       </div>
