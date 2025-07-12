@@ -148,7 +148,7 @@ export default function EgyptInteractiveMap() {
             Explore Ancient Egypt
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">
-            Click on the pins to discover Egypt's most fascinating historical sites,
+            Click on the pins to discover Egypt&apos;s most fascinating historical sites,
             from ancient pyramids to magnificent temples along the Nile.
           </p>
         </div>
