@@ -82,7 +82,10 @@ export default function ArtifactsPage() {
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 flex flex-col items-center space-y-6 md:space-y-8">
         {/* Title */}
-        <h1 className="text-yellow-600 font-bold text-center px-4 mt-16 sm:mt-12 md:mt-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <h1 className="text-black font-bold text-center px-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          Egyptian Marvels
+        </h1>
+        <h1 className="text-yellow-600 font-bold text-center px-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           {artifact.name}
         </h1>
         {/* Model + Description */}
@@ -119,7 +122,7 @@ export default function ArtifactsPage() {
           </motion.div>
         </div>
         {/* Navigation */}
-        <div className="flex gap-3 md:gap-4 mt-4 md:mt-6 w-full max-w-xs sm:max-w-sm md:max-w-md">
+        <div className="flex gap-3 md:gap-4 mt-4 md:mt-6 w-full max-w-xs sm:max-w-sm md:max-w-md -translate-y-10">
           <button
             onClick={goPrevious}
             disabled={index === 0}
