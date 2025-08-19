@@ -53,19 +53,22 @@ export default function EgyptInteractiveMap() {
       }
     };
 
+    // Store current ref value to avoid stale closure issues
+    const currentMapRef = mapRef.current;
+
     // Check if image is loaded
-    if (mapRef.current?.complete) {
+    if (currentMapRef?.complete) {
       updateDimensions();
     } else {
-      mapRef.current?.addEventListener('load', updateDimensions);
+      currentMapRef?.addEventListener('load', updateDimensions);
     }
 
     // Update on resize
     window.addEventListener('resize', updateDimensions);
     return () => {
       window.removeEventListener('resize', updateDimensions);
-      if (mapRef.current) {
-        mapRef.current.removeEventListener('load', updateDimensions);
+      if (currentMapRef) {
+        currentMapRef.removeEventListener('load', updateDimensions);
       }
     };
   }, []);
@@ -93,6 +96,7 @@ export default function EgyptInteractiveMap() {
           <Link href="/">
             <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={24} />
           </Link>
+        
         </div>
 
         {/* Tablet and Desktop Layout (sm and above) */}
@@ -100,6 +104,7 @@ export default function EgyptInteractiveMap() {
           <Link href="/">
             <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={28} />
           </Link>
+        
         </div>
       </div>
 
@@ -110,7 +115,7 @@ export default function EgyptInteractiveMap() {
             Explore Ancient Egypt
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">
-            Click on the icons to discover Egypt's most captivating historical sites: from ancient pyramids to magnificent temples along the Nile.
+            Click on the icons to discover Egypt&apos;s most captivating historical sites: from ancient pyramids to magnificent temples along the Nile.
           </p>
         </div>
 
