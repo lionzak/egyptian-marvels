@@ -29,56 +29,7 @@ export default function ArtifactsPage() {
         />
       </Link>
       {/* Responsive Logo Navigation */}
-      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 z-50">
-        {/* Mobile Layout (below md) */}
-        <div className="flex gap-2 md:hidden">
-          <Image
-            src="/images/egypt.png"
-            alt="egypt"
-            width={40}
-            height={30}
-            className="hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/belarus.png"
-            alt="belarus"
-            width={40}
-            height={30}
-            className="hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/minstry.png"
-            alt="ministry"
-            width={32}
-            height={32}
-            className="hover:scale-105 transition-transform duration-200"
-          />
-        </div>
-        {/* Tablet and Desktop Layout (md and above) */}
-        <div className="hidden md:flex gap-3 lg:gap-4">
-          <Image
-            src="/images/egypt.png"
-            alt="egypt"
-            width={56}
-            height={42}
-            className="lg:w-20 lg:h-15 hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/belarus.png"
-            alt="belarus"
-            width={56}
-            height={42}
-            className="lg:w-20 lg:h-15 hover:scale-105 transition-transform duration-200"
-          />
-          <Image
-            src="/images/minstry.png"
-            alt="ministry"
-            width={48}
-            height={48}
-            className="lg:w-16 lg:h-16 hover:scale-105 transition-transform duration-200"
-          />
-        </div>
-      </div>
+      
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 flex flex-col items-center space-y-6 md:space-y-8">
         {/* Title */}

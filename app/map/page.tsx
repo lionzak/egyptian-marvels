@@ -85,7 +85,7 @@ export default function EgyptInteractiveMap() {
 
         {/*design by */}
         <div className="fixed top-2 right-2 sm:bottom-4 sm:right-4 text-black text-xs sm:text-sm md:text-base z-40 pointer-events-none">
-          разработанный Марком Альбером
+          designed by Mark Albert
         </div>
 
         {/* Mobile Layout (below sm) */}
@@ -93,29 +93,6 @@ export default function EgyptInteractiveMap() {
           <Link href="/">
             <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={24} />
           </Link>
-          <div className="flex items-center gap-1">
-            <Image
-              src="/images/egypt.png"
-              alt="egypt"
-              width={50}
-              height={38}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-            <Image
-              src="/images/belarus.png"
-              alt="belarus"
-              width={50}
-              height={38}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-            <Image
-              src="/images/minstry.png"
-              alt="ministry"
-              width={40}
-              height={40}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-          </div>
         </div>
 
         {/* Tablet and Desktop Layout (sm and above) */}
@@ -123,27 +100,6 @@ export default function EgyptInteractiveMap() {
           <Link href="/">
             <ArrowLeft className="text-black hover:text-gray-700 transition-colors duration-200" size={28} />
           </Link>
-          <Image
-            src="/images/egypt.png"
-            alt="egypt"
-            width={60}
-            height={45}
-            className="md:w-20 md:h-15 lg:w-24 lg:h-18 hover:scale-110 transition-transform duration-200"
-          />
-          <Image
-            src="/images/belarus.png"
-            alt="belarus"
-            width={60}
-            height={45}
-            className="md:w-20 md:h-15 lg:w-24 lg:h-18 hover:scale-110 transition-transform duration-200"
-          />
-          <Image
-            src="/images/minstry.png"
-            alt="ministry"
-            width={50}
-            height={50}
-            className="md:w-16 md:h-16 lg:w-20 lg:h-20 hover:scale-110 transition-transform duration-200"
-          />
         </div>
       </div>
 
@@ -151,10 +107,10 @@ export default function EgyptInteractiveMap() {
         {/* Header */}
         <div className="text-center mb-4 sm:mb-6 lg:mb-8 mt-16 sm:mt-12 lg:mt-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 px-2">
-            Исследуйте Древний Египет
+            Explore Ancient Egypt
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-4">
-            Нажмите на значки, чтобы открыть для себя самые захватывающие исторические места Египта: от древних пирамид до величественных храмов вдоль Нила.
+            Click on the icons to discover Egypt's most captivating historical sites: from ancient pyramids to magnificent temples along the Nile.
           </p>
         </div>
 
@@ -191,10 +147,10 @@ export default function EgyptInteractiveMap() {
               <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">Legend</h3>
               <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600">
                 <Image src="/images/pin.webp" alt="Pin" width={16} height={16} className="sm:w-5 sm:h-5" />
-                <span>Исторические места</span>
+                <span>Historical Sites</span>
               </div>
               <div className="text-xs text-gray-500 mt-1">
-                Нажмите на значки, чтобы изучить
+                Click on icons to explore
               </div>
             </div>
           </div>
@@ -204,15 +160,15 @@ export default function EgyptInteractiveMap() {
         <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6 mt-4 sm:mt-6 lg:mt-8 px-2 sm:px-0">
           <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-600">5000+</div>
-            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Годы истории</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Years of History</div>
           </div>
           <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600">7</div>
-            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Объекты ЮНЕСКО</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">UNESCO Sites</div>
           </div>
           <div className="text-center p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600">∞</div>
-            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Чудеса</div>
+            <div className="text-xs sm:text-sm lg:text-base text-gray-600">Wonders</div>
           </div>
         </div>
       </div>

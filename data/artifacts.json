@@ -1,42 +1,42 @@
 [
   {
     "id": "1",
-    "name": "Золотая маска Тутанхамона",
-    "period": "XVIII династия",
-    "location": "Долина Царей",
-    "description": "Изысканная погребальная маска, изготовленная из 11 кг чистого золота с инкрустациями лазурита и других полудрагоценных камней. Она покрывала мумию фараона XVIII династии Тутанхамона. Обнаружена Говардом Картером в 1922 году, маска стала символом древнеегипетского мастерства и богатства фараонов.",
+    "name": "Tutankhamun's Golden Mask",
+    "period": "XVIII Dynasty",
+    "location": "Valley of the Kings",
+    "description": "An exquisite funerary mask made from 11 kg of pure gold with inlays of lapis lazuli and other semi-precious stones. It covered the mummy of XVIII Dynasty pharaoh Tutankhamun. Discovered by Howard Carter in 1922, the mask became a symbol of ancient Egyptian craftsmanship and the wealth of the pharaohs.",
     "model": "/models/tutankhamun_mask-optimized.glb"
   },
   {
     "id": "2",
-    "name": "Розеттский камень",
-    "period": "Птолемеевский период",
-    "location": "Мемфис",
-    "description": "Гранодиоритовая стела с указом, изданным в Мемфисе в 196 году до н.э. от имени царя Птолемея V Эпифана. Текст нанесён на трёх языках: древнеегипетские иероглифы, демотическое письмо и древнегреческий язык. Благодаря этим параллельным текстам стало возможным расшифровать иероглифы, что совершил Жан-Франсуа Шампольон в 1822 году.",
+    "name": "Rosetta Stone",
+    "period": "Ptolemaic Period",
+    "location": "Memphis",
+    "description": "A granodiorite stela with a decree issued in Memphis in 196 BC on behalf of King Ptolemy V Epiphanes. The text is inscribed in three languages: ancient Egyptian hieroglyphs, Demotic script, and ancient Greek. Thanks to these parallel texts, it became possible to decipher hieroglyphs, which Jean-François Champollion accomplished in 1822.",
     "model": "/models/rosetta_stone-optimized.glb"
   },
   {
     "id": "3",
-    "name": "Палетка Нармерa",
-    "period": "Раннее династическое царство",
-    "location": "Иераконполь (Некен)",
-    "description": "Эта церемониальная палетка из зеленого сланца — один из самых древних и значимых памятников Древнего Египта. На ней изображен фараон Нармер, объединяющий Верхний и Нижний Египет. Символизм и сцены на палетке рассказывают о рождении единого государства, становлении власти и начале фараонской эпохи. Возможно, она использовалась в ритуалах и демонстрировала божественное право царя на правление.",
+    "name": "Narmer Palette",
+    "period": "Early Dynastic Period",
+    "location": "Hierakonpolis (Nekhen)",
+    "description": "This ceremonial palette made of green slate is one of the most ancient and significant monuments of Ancient Egypt. It depicts Pharaoh Narmer uniting Upper and Lower Egypt. The symbolism and scenes on the palette tell the story of the birth of a unified state, the establishment of power, and the beginning of the pharaonic era. It was likely used in rituals and demonstrated the divine right of the king to rule.",
     "model": "/models/narmer_palette-optimized.glb"
   },
   {
     "id": "6",
-    "name": "Бюст Нефертити",
-    "period": "18-я династия",
-    "location": "Амарна",
-    "description": "Этот изысканный бюст царицы Нефертити, вырезанный из известняка и покрытый гипсом и краской, воплощает идеал женской красоты в Древнем Египте. Найденный в мастерской скульптора Тхута в Амарне, бюст восхищает своим утонченным стилем, изящной короной и выразительными чертами лица. Он словно застывшее мгновение — взгляд в вечность, отражающий могущество, грацию и загадку великой царицы.",
+    "name": "Bust of Nefertiti",
+    "period": "18th Dynasty",
+    "location": "Amarna",
+    "description": "This exquisite bust of Queen Nefertiti, carved from limestone and covered with plaster and paint, embodies the ideal of female beauty in Ancient Egypt. Found in sculptor Thutmose's workshop in Amarna, the bust captivates with its refined style, elegant crown, and expressive facial features. It's like a frozen moment—a gaze into eternity, reflecting the power, grace, and mystery of the great queen.",
     "model": "/models/bust_of_nefertiti-optimized.glb"
   },
   {
     "id": "4",
-    "name": "Анх — ключ жизни",
-    "period": "Ранний династический период",
-    "location": "Фива или Мемфис",
-    "description": "В руках богов и фараонов анх был не просто символом — он был обещанием. Его несли в ритуалах, вырезали на стенах храмов, носили у сердца. Он шептал о вечной жизни, возрождении и бесконечном существовании — священный ключ к миру видимому и невидимому.",
+    "name": "Ankh — Key of Life",
+    "period": "Early Dynastic Period",
+    "location": "Thebes or Memphis",
+    "description": "In the hands of gods and pharaohs, the ankh was not just a symbol—it was a promise. It was carried in rituals, carved on temple walls, worn close to the heart. It whispered of eternal life, rebirth, and infinite existence—a sacred key to the visible and invisible world.",
     "model": "/models/ankh-optimized.glb"
   }
 ]
